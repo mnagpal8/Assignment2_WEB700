@@ -8,32 +8,6 @@
 *
 ********************************************************************************/ 
 
-// const collegeData = require('./modules/collegeData');
-
-// collegeData.initialize()
-
-//   .then(() => {
-//     //console.log('Initialization successful');
-//     return collegeData.getAllStudents();
-//   })
-
-//   .then(students => {
-//     console.log(`Successfully retrieved ${students.length} students`);
-//     return collegeData.getCourses();
-//   })
-
-//   .then(courses => {
-//     console.log(`Successfully retrieved ${courses.length} courses`);
-//     return collegeData.getTAs();
-//   })
-
-//   .then(tas => {
-//     console.log(`Successfully retrieved ${tas.length} TAs`);
-//   })
-
-//   .catch(err => {
-//     console.error(err);
-//   });
 
 const collegeData = require('./modules/collegeData');
 
