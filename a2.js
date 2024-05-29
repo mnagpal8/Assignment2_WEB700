@@ -8,28 +8,26 @@
 *
 ********************************************************************************/ 
 
+const collegeData = require('./modules/collegeData'); //Import the collegeData module from the specified file path
 
-const collegeData = require('./modules/collegeData');
+collegeData.initialize() //Call the initialize function from the collegeData module
+.then(() => { //If the initialize promise is resolved
 
-collegeData.initialize()
-.then(() => {
-    // console.log("Successfully initialized data");
-
-    return collegeData.getAllStudents();
+    return collegeData.getAllStudents(); //Call the getAllStudents function from the collegeDatamodule and return the promise
 })
-.then((students) => {
-    console.log(`Successfully retrieved ${students.length} students`);[26]
+.then((students) => { //If the getAllStudents promise is resolved
+    console.log(`Successfully retrieved ${students.length} students`); //Log the number of students retrieved
 
-    return collegeData.getCourses();
+    return collegeData.getCourses(); //Call thegetCourses function from the collegeData module and return the promise
 })
-.then((courses) => {
-    console.log(`Successfully retrieved ${courses.length} courses`);[27]
+.then((courses) => { //If the getCourses'Promise is resolved
+    console.log(`Successfully retrieved ${courses.length} courses`); //Log the number of courses retrieved
 
-    return collegeData.getTAs();
+    return collegeData.getTAs(); //Call the getTAs function from the collegeData module and return the Promise
 })
-.then((tas) => {
-    console.log(`Successfully retrieved ${tas.length} TAs`);[28]
+.then((tas) => { //If the getTAs promise is resolved
+    console.log(`Successfully retrieved ${tas.length} TAs`); //Log the number of TAs retrieved
 })
-.catch((error) => {
-    console.error(error);
+.catch((error) => { // If any of the promises is rejected
+    console.error(error); // Log the error message
 });
